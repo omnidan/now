@@ -1,0 +1,27 @@
+<head>
+  <title>now</title>
+</head>
+
+<body>
+  <div class="ui menu">
+    <div class="item">
+      <h1>now</h1>
+    </div>
+    <div class="item">
+      <h1>{{> NewPostButton}}</h1>
+    </div>
+    <div class="right item">
+      {{currentUser.username}}
+    </div>
+  </div>
+
+  <div id="newPost" class="ui raised segment">
+    {{#if currentUser}}
+    <p>Posting as: {{> User username=currentUser.username points=currentUser.points}}</p>
+    {{/if}}
+
+    <p>{{> quickForm collection="Posts" id="createPostForm" type="insert"}}</p>
+  </div>
+
+  {{> PostContainer}}
+</body>

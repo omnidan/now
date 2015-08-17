@@ -1,0 +1,84 @@
+body {
+	margin: 10px 10%;
+}
+
+#login, #newPost {
+	display: none;
+}
+
+.nowButton.newPost {
+	margin-left: 3px;
+}
+
+.nowButton {
+	color: rgba(0, 0, 0, 0.3);
+	-webkit-transition: all 250ms ease;
+	-moz-transition: all 250ms ease;
+	-ms-transition: all 250ms ease;
+	-o-transition: all 250ms ease;
+	transition: all 250ms ease;
+}
+
+.nowButton:hover {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.nowButton.active {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.nowButton:hover.active {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.footer {
+	color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.footer .points {
+	color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.footer .date {
+	color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.username small {
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.rank0 {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.rank1 {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.rank2 {
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.rank3 {
+	color: #C5E1A5; /* green */
+}
+
+.rank4 {
+	color: #81D4FA; /* light blue 200 */
+}
+
+.rank5 {
+	color: #FF8A65; /* red */
+}
+
+.rank6 {
+	color: #B39DDB; /* deep purple 200 */
+}
+
+.rank7 {
+	color: #9575CD; /* deep purple 300 */
+}
+
+.rank8 {
+	color: #9575CD; /* deep purple 400 */
+}
