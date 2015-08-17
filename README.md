@@ -14,4 +14,4 @@ Check it out at: http://postnow.meteor.com/
  * [Download now via zip from github](https://github.com/omnidan/now/archive/master.zip) (or run `git clone https://github.com/omnidan/now`)
  * Change into the directory (run `cd now`)
  * Run now via `meteor`
- * Access http://localhost:3000 - that's it!
+ * Access [http://localhost:3000](http://localhost:3000) - that's it!
