@@ -3,9 +3,9 @@ now
 
 _simple real-time [reddit](https://www.reddit.com/)/[HN](https://news.ycombinator.com/)-inspired social network crafted with [React](https://facebook.github.io/react/) and [Meteor](https://www.meteor.com/)_
 
-[![http://i.imgur.com/UPNZaVU.png](http://i.imgur.com/UPNZaVU.png)](http://postnow.meteor.com/)
+[![http://i.imgur.com/UPNZaVU.png](http://i.imgur.com/UPNZaVU.png)](http://now.omnidan.net/)
 
-Check it out at: http://postnow.meteor.com/
+Check it out at: http://now.omnidan.net/
 
 
 ## Setup
