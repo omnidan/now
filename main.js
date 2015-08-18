@@ -1,3 +1,5 @@
+VERSION = "1.0.0";
+
 Posts = new Mongo.Collection('posts');
 Posts.attachSchema(new SimpleSchema({
   title: {
