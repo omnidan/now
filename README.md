@@ -3,7 +3,7 @@ now
 
 _simple real-time [reddit](https://www.reddit.com/)/[HN](https://news.ycombinator.com/)-inspired social network crafted with [React](https://facebook.github.io/react/) and [Meteor](https://www.meteor.com/)_
 
-[![http://i.imgur.com/UPNZaVU.png](http://i.imgur.com/UPNZaVU.png)](http://now.omnidan.net/)
+[![now 1.0.2: https://i.imgur.com/5GvMYP7.png](https://i.imgur.com/5GvMYP7.png)](http://now.omnidan.net/)
 
 Check it out at: http://now.omnidan.net/
 
