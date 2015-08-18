@@ -15,13 +15,13 @@
       <h1>{{> NewPostButton}}</h1>
     </div>
     <div class="right item">
-      {{currentUser.username}}
+      {{> User user=currentUser._id me=true}}
     </div>
   </div>
 
   <div id="newPost" class="ui raised segment">
     {{#if currentUser}}
-    <p>Posting as: {{> User username=currentUser.username points=currentUser.points}}</p>
+    <p>Posting as: {{> User user=currentUser._id}}</p>
     {{/if}}
 
     <p>{{> quickForm collection="Posts" id="createPostForm" type="insert"}}</p>

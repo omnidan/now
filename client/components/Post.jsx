@@ -2,56 +2,6 @@
  * @jsx React.DOM
  */
 
-User = ReactMeteor.createClass({
-  templateName: 'User',
-
-  componentWillUpdate(nextProps, nextState) {
-    // FIXME: workaround for bug that makes username and digits undefined sometimes
-    if (nextProps.username === undefined) nextProps.username = this.props.username;
-    if (nextProps.digits === undefined) nextProps.digits = this.props.digits;
-  },
-
-  startMeteorSubscriptions() {
-    Meteor.subscribe("users");
-  },
-
-  resolveColor(digits) {
-    return 'rank' + digits;
-  },
-
-  resolveCode(digits) {
-    if (digits === 0) return 'o';
-    else return 'x'.repeat(digits);
-  },
-
-  digits(x) {
-    if (!x || (x === 0)) return 0;
-
-    // math-magic - from http://stackoverflow.com/a/28203456
-    return (math.log((x ^ (x >> 31)) - (x >> 31), 10) | 0) + 1;
-  },
-
-  render() {
-    var { username, digits } = this.props;
-    if (this.props.points) digits = this.digits(this.props.points);
-
-    var className;
-    if (digits === undefined) className = "username";
-    else className = "username " + this.resolveColor(digits);
-
-    var points;
-    if (this.props.points !== undefined) points = this.props.points;
-    else points = this.resolveCode(digits);
-
-    var pointsBox;
-    if (points) pointsBox = <small>[{points}]</small>;
-
-    return <span className={className}>
-      {username} {pointsBox}
-    </span>;
-  }
-});
-
 Post = React.createClass({
   getInitialState() {
     return {
@@ -68,7 +18,7 @@ Post = React.createClass({
   render() {
     var { title, url, user, points, createdAt } = this.props;
 
-    user = user ? user : Meteor.user();
+    user = user ? user : Meteor.userId();
 
     var timestamp = new Date(createdAt);
     var icon = "large " + (this.state.voted ? "orange" : "grey") + " angle up middle aligned icon";
@@ -76,7 +26,7 @@ Post = React.createClass({
       <i className={icon} onClick={this.vote}></i>
       <div className="content post">
         <a className="header" href={url}>{title}</a>
-        <div className="description footer"><span className="points">{points} points</span> - submitted by <User username={user.username} digits={user.digits} /> at <span className="date">{timestamp.toLocaleString()}</span></div>
+        <div className="description footer"><span className="points">{points} points</span> - submitted by <User user={user} /> at <span className="date">{timestamp.toLocaleString()}</span></div>
       </div>
     </div>;
   }

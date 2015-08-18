@@ -1,29 +1,6 @@
 var _debug = Meteor.npmRequire('debug');
 var debug = _debug('server');
 
-function digits(x) {
-  if (!x || (x === 0)) return 0;
-
-  // math-magic - from http://stackoverflow.com/a/28203456
-  return (math.log((x ^ (x >> 31)) - (x >> 31), 10) | 0) + 1;
-}
-
-Meteor.publish('posts', function () {
-  Publish.relations(this, Posts.find({}, {sort: {points: -1}}), function (id, doc) {
-    doc.user = this.cursor(Meteor.users.find(doc.user))
-      .changeParentDoc(function (userId, user) {
-        return {username: user.username, digits: digits(user.points)};
-      });
-  });
-
-  return this.ready();
-});
-
-/* from http://stackoverflow.com/a/15103885/702288 */
-Meteor.publish("userData", function () {
-  return Meteor.users.find({_id: this.userId}, {fields: {'voted': 1, 'points': 1}});
-});
-
 Meteor.methods({
   vote: function votePost(dbId) {
     var voted = true;
