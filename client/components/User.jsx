@@ -11,11 +11,15 @@ User = ReactMeteor.createClass({
   },
 
   getMeteorState() {
-    if (!this.props.user) throw new Error("Please specify a user id!");
+    if (!this.props.user) return {
+      username: 'loading...',
+      points: 0
+    };
+    
     var user = Meteor.users.findOne(this.props.user);
     return {
-      username: user.username,
-      points: user.points
+      username: user ? user.username : this.props.user,
+      points: user ? user.points : 0
     };
   },
 
